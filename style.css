@@ -1,0 +1,425 @@
+/* General Body and Container */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #531e8a 0%, #2575fc 100%);
+  color: #fff;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+  flex-grow: 1;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+  color: #ddd;
+  font-size: 1.1rem;
+}
+
+/* Navigation Filters */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  backdrop-filter: blur(5px);
+}
+
+.filters button:hover {
+  background: #e107c8;
+  transform: translateY(-3px);
+}
+
+/* Artist Scroll */
+.artist-scroll {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #e107c8 rgba(255, 255, 255, 0.1); /* For Firefox */
+}
+
+/* Webkit scrollbar (Chrome, Safari) */
+.artist-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.artist-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.artist-scroll::-webkit-scrollbar-thumb {
+  background: #e107c8;
+  border-radius: 10px;
+}
+
+
+.artist-card {
+  flex: 0 0 auto;
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.artist-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.artist-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.artist-card p {
+  padding: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Songs Grid */
+.songs-grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* Song Card */
+.song-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  position: relative;
+  color: #8b8787;
+  backdrop-filter: blur(8px);
+}
+
+.song-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+.song-card img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0;
+  padding: 0;
+}
+
+.song-details {
+  padding-left: 15px;
+}
+
+.song-details h3 {
+  font-size: 1.4rem;
+  color: #0f0303;
+  margin: 0;  /* remove default margin */
+  padding: 0; /* remove padding if any */
+}
+
+.song-details p {
+  font-size: 1rem;
+  color: #120f0f;
+  margin: 0;  /* remove default margin */
+  padding: 0; /* remove padding if any */
+}
+
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.actions button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.8rem; /* Larger icons */
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.actions button:hover {
+  color: #e107c8;
+  transform: scale(1.1);
+}
+
+.actions .favorite.active {
+  color: red; /* Active favorite */
+  filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
+}
+
+/* Recommended Songs Section */
+section h2 {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.recommended-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.recommend-card {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 12px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.recommend-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.recommend-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recommend-details h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.recommend-details p {
+  margin: 5px 0 0;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+/* Player Page Specific Styles */
+#player.song-card {
+  max-width: 600px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  padding: 25px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+#player img {
+  width: 100%;
+  max-height: 600px;
+  border-radius: 18px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+#player .song-details h3 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+#player .song-details p {
+  font-size: 1.2rem;
+}
+
+#player audio {
+  width: 100%;
+  margin-top: 25px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Back to Home button on player page */
+.container > a {
+  color: #efe9e9;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-left: 0;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.container > a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-5px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .songs-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .song-card img {
+  width: 50px;      /* or min-width: 50px; */
+  height: 50px;     /* or min-height: 50px; */
+  object-fit: cover; /* keep aspect ratio, crop if needed */
+  border-radius: 4px; /* optional: rounded corners */
+}
+
+
+  .song-details h3 {
+    font-size: 1.1rem;
+  }
+
+  .song-details p {
+    font-size: 0.85rem;
+  }
+
+  .actions button {
+    font-size: 1.5rem;
+  }
+
+  .recommend-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .recommend-card img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+.actions .favorite {
+  /* Existing styles */
+  transition: color 0.3s ease, transform 0.2s ease; /* Keep existing transition */
+}
+
+.actions .favorite.active {
+  color: red; /* Active favorite */
+  filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
+  animation: pulse 0.4s ease-in-out; /* Add this line for animation */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.buttoscontrols {
+  display: flex;
+  gap: 12px;               /* space between buttons */
+  justify-content: center; /* center buttons horizontally */
+  margin: 20px 0;          /* vertical spacing around the container */
+}
+
+.buttoscontrols button {
+  background-color: #007BFF;      /* nice blue */
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.buttoscontrols button:hover {
+  background-color: #0056b3;  /* darker blue on hover */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.buttoscontrols button:focus {
+  outline: 2px solid #0056b3;
+  outline-offset: 2px;
+}
+
+.buttoscontrols button:active {
+  background-color: #00408d;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transform: translateY(1px);
+}
+#show-trending {
+  background-color: #007BFF;
+}
+
+#show-trending:hover {
+  background-color: #0056b3;
+}
+
+#show-favorites {
+  background-color: #E91E63;  /* pink */
+}
+
+#show-favorites:hover {
+  background-color: #AD1457;
+}
+
+  

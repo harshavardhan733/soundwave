@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SoundWave 🎵</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎵 SoundWave</h1>
+      <p>Stream your favorite tracks</p>
+    </header>
+
+    <nav class="filters">
+      <div id="artist-list" class="artist-scroll"></div>
+    </nav>
+
+    <div class="buttoscontrols"> 
+      <button id="show-trending">🔥 Trending</button>
+      <button id="show-favorites">💖 Favorites</button>
+    </div> 
+
+    <main>
+      <div id="songs-container" class="songs-grid"></div>
+    </main>
+
+    <section>
+      <h2>🎵 Recommended for You</h2>
+      <div id="recommended-container" class="recommended-list"></div>
+    </section>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

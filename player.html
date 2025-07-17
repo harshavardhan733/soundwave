@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Now Playing 🎧</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <a href="index.html">← Back to Home</a>
+
+    <div id="player" class="song-card"></div>
+
+    <section>
+      <h2>🎶 You may also like</h2>
+      <div id="suggested-songs" class="songs-grid"></div>
+    </section>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const songId = parseInt(urlParams.get("id"));
+    const song = songsData.find(s => s.id === songId);
+
+    const player = document.getElementById("player");
+    const suggestions = document.getElementById("suggested-songs");
+
+    if (!song) {
+      player.innerHTML = "<p style='text-align:center; color:white; font-size:1.5rem;'>Song not found 🚫</p>";
+    } else {
+      player.innerHTML = `
+        <img src="${song.cover}" alt="${song.title} "  />
+        <div class="song-details">
+          <h3>${song.title}</h3>
+          <p>${song.artist} • ${song.duration}</p>
+        </div>
+        <div style="padding-left: 15px;">
+          <audio controls style="width: 100%;">
+            <source src="${song.Audio || ''}" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      `;
+
+      // 💡 Suggested songs by same artist
+      const related = songsData.filter(s => s.artist === song.artist && s.id !== song.id);
+      related.forEach(s => {
+        const card = document.createElement("div");
+        card.className = "song-card";
+        card.style.cursor = "pointer";
+        card.innerHTML = `
+            <img src="${s.cover}" alt="${s.title}" style=" height:100px;" />
+          <div class="song-details">
+            <h3>${s.title}</h3>
+            <p>${s.artist} • ${s.duration}</p>
+          </div>
+        `;
+
+        card.addEventListener("click", () => {
+          window.location.href = `player.html?id=${s.id}`;
+        });
+
+        suggestions.appendChild(card);
+      });
+
+      if (related.length === 0) {
+        suggestions.innerHTML = "<p style='text-align:center; color:white; opacity:0.8;'>No more songs by this artist</p>";
+      }
+    }
+  </script>
+</body>
+</html>
