@@ -46,12 +46,6 @@ Simply open index.html in any modern web browser.
 HTML5
 
 CSS3
-![WhatsApp Image 2025-07-21 at 09 21 27_d2630047](https://github.com/user-attachments/assets/a5020c5f-8162-481e-9c70-ccfdab43c633)
-![Uploading WhatsApp Image 2025-07-21 at 09.21.27_7c31bb46.jpg…]()
-![WhatsApp Image 2025-07-21 at 09 21 27_21a170dc](https://github.com/user-attachments/assets/a687ce78-8b53-4545-9e07-2a6ebd00270f)
-![Uploading WhatsApp Image 2025-07-21 at 09.21.29_29904ee1.jpg…]()
-![Uploading WhatsApp Image 2025-07-21 at 09.21.29_b1a3bd07.jpg…]()
-![Uploading WhatsApp Image 2025-07-21 at 09.21.29_d02637b8.jpg…]()
 
 
 JavaScript (Vanilla)
