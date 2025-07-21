@@ -1,4 +1,3 @@
-![IMG-20250721-WA0008](https://github.com/user-attachments/assets/7f657a69-685a-45f2-9e34-4c070eb6939c)# soundwave
 # 🎵 SoundWave - Online Music Streaming Web App
 
 SoundWave is a sleek and responsive music streaming web application built with HTML, CSS, and JavaScript. It allows users to browse, play, and favorite their favorite tracks by various artists. It includes a trending section, favorites, artist filtering, and a clean player interface.
